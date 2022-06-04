@@ -57,6 +57,13 @@ app.get('/',function(req,res){
 
 
 
-app.listen(5000,()=>{
-    console.log("Server Ready on 3000");
-});
+// app.listen(5000,()=>{
+//     console.log("Server Ready on 3000");
+// });
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 5000;
+  console.log("Server Ready on 5000");
+}
+app.listen(port);
